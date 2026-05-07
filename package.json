@@ -1,0 +1,33 @@
+{
+  "name": "julienlerosty-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "denylist": "tsx scripts/denylist-check.ts",
+    "secscan": "(command -v gitleaks > /dev/null && gitleaks detect --source . --config .gitleaks.toml --no-banner || echo 'gitleaks not installed locally — relying on CI') && npm run denylist"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.95.0",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.39",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^4.1.5"
+  }
+}

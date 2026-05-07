@@ -1,0 +1,30 @@
+title = "julienlerosty.ai gitleaks config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "anthropic-api-key"
+description = "Anthropic API key"
+regex = '''sk-ant-(api\d{2}|admin\d{2})-[A-Za-z0-9_-]{40,}'''
+
+[[rules]]
+id = "tastytrade-account"
+description = "Tastytrade account number pattern"
+regex = '''\b5WU\d{5}\b'''
+
+[[rules]]
+id = "vps-ip"
+description = "Known VPS IP"
+regex = '''178\.156\.231\.86'''
+
+[[rules]]
+id = "tastytrade-secret"
+description = "Tastytrade client_secret pattern"
+regex = '''[a-f0-9]{40}'''
+
+[allowlist]
+paths = [
+  '''package-lock\.json$''',
+  '''yarn\.lock$''',
+]
