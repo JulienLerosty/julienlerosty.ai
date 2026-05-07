@@ -56,4 +56,10 @@ describe("denylist scanner", () => {
       expect(() => execSync("npx tsx scripts/denylist-check.ts", { stdio: "pipe" })).toThrow();
     });
   });
+
+  it("blocks Tastytrade credential name exposure", () => {
+    withFixture("TASTYTRADE_CLIENT_SECRET=placeholder", () => {
+      expect(() => execSync("npx tsx scripts/denylist-check.ts", { stdio: "pipe" })).toThrow();
+    });
+  });
 });

@@ -10,7 +10,10 @@ const DENYLIST: { pattern: RegExp; label: string }[] = [
   // in public-facing files could violate his contract / IP obligations. Case-insensitive.
   { pattern: /\bapple\b/i, label: "employer reference (case-by-case review)" },
   { pattern: /\/root\/vcp-scanner\b/, label: "production server path" },
-  { pattern: /(client[_-]?secret|api[_-]?key|token|secret)\s*[:=]\s*["']?[a-f0-9]{40}["']?/i, label: "credential value (40-hex secret)" },
+  // Catch the literal Tastytrade credential variable name appearing anywhere — name exposure
+  // is itself a signal, even when the value is a placeholder.
+  { pattern: /tastytrade.*client[_-]?secret/i, label: "Tastytrade credential name exposure" },
+  { pattern: /(client[_-]?secret|api[_-]?key|access[_-]?token|auth[_-]?token|bearer[_-]?token)\s*[:=]\s*["']?[a-f0-9]{40}["']?/i, label: "credential value (40-hex secret)" },
 ];
 
 const SCAN_EXTENSIONS = [".ts", ".tsx", ".js", ".jsx", ".md", ".mdx", ".json", ".yml", ".yaml"];

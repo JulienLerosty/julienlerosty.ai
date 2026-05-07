@@ -19,9 +19,14 @@ description = "Known VPS IP"
 regex = '''178\.156\.231\.86'''
 
 [[rules]]
+id = "tastytrade-credential-name"
+description = "Tastytrade credential variable name exposure"
+regex = '''tastytrade.*client[_-]?secret'''
+
+[[rules]]
 id = "tastytrade-secret"
-description = "Tastytrade client_secret value (40 hex preceded by credential keyword)"
-regex = '''(client[_-]?secret|api[_-]?key|token|secret)\s*[:=]\s*["']?[a-f0-9]{40}["']?'''
+description = "Tastytrade client_secret value (40-hex preceded by credential keyword)"
+regex = '''(client[_-]?secret|api[_-]?key|access[_-]?token|auth[_-]?token|bearer[_-]?token)\s*[:=]\s*["']?[a-f0-9]{40}["']?'''
 
 [allowlist]
 paths = [
