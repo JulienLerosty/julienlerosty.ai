@@ -48,6 +48,9 @@
       0 0 64px -24px rgba(0,255,136,0.2);
   }
   .terminal-prompt::before { content: "> "; @apply text-accent-green; }
+  .motion-cursor {
+    animation: blink 1.1s steps(2, end) infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
