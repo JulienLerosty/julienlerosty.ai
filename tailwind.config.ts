@@ -29,15 +29,15 @@ const config: Config = {
         },
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "Geist Mono", "ui-monospace", "monospace"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
       },
       backdropBlur: {
         glass: "20px",
       },
       animation: {
         "cursor-blink": "blink 1.1s steps(2, end) infinite",
-        "grid-drift": "drift 60s linear infinite",
+        "grid-drift": "drift 80s linear infinite",
       },
       keyframes: {
         blink: { "50%": { opacity: "0" } },

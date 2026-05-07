@@ -1,4 +1,4 @@
-import { ReactNode, HTMLAttributes } from "react";
+import { forwardRef, ReactNode, HTMLAttributes } from "react";
 import { clsx } from "clsx";
 
 type Props = HTMLAttributes<HTMLDivElement> & {
@@ -6,10 +6,17 @@ type Props = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
 };
 
-export function Glass({ variant = "default", className, children, ...rest }: Props) {
+export const Glass = forwardRef<HTMLDivElement, Props>(function Glass(
+  { variant = "default", className, children, ...rest },
+  ref
+) {
   return (
-    <div className={clsx(variant === "strong" ? "glass-strong" : "glass", className)} {...rest}>
+    <div
+      ref={ref}
+      className={clsx(variant === "strong" ? "glass-strong" : "glass", className)}
+      {...rest}
+    >
       {children}
     </div>
   );
-}
+});

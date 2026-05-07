@@ -42,10 +42,16 @@
   }
   .glass-strong {
     @apply bg-glass-fillStrong border border-glass-border backdrop-blur-glass rounded-xl;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.12),
+      0 16px 48px -16px rgba(0,0,0,0.7),
+      0 0 64px -24px rgba(0,255,136,0.2);
   }
   .terminal-prompt::before { content: "> "; @apply text-accent-green; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  /* Cursor indicator is a UI signal (agent is online); keep a slow pulse so it's still visible */
+  .motion-cursor { animation: blink 1.5s steps(2, end) infinite !important; }
 }
