@@ -1,16 +1,47 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bg: {
+          base: "#0a0a0a",
+          raised: "#111111",
+          sunken: "#050505",
+        },
+        fg: {
+          DEFAULT: "#e6e6e6",
+          muted: "#888888",
+          subtle: "#555555",
+        },
+        accent: {
+          green: "#00ff88",
+          cyan: "#00d4ff",
+          warn: "#ffaa00",
+          err: "#ff5577",
+        },
+        glass: {
+          fill: "rgba(255,255,255,0.04)",
+          fillStrong: "rgba(255,255,255,0.07)",
+          border: "rgba(255,255,255,0.12)",
+          borderSubtle: "rgba(255,255,255,0.06)",
+        },
+      },
+      fontFamily: {
+        mono: ["JetBrains Mono", "Geist Mono", "ui-monospace", "monospace"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
+      backdropBlur: {
+        glass: "20px",
+      },
+      animation: {
+        "cursor-blink": "blink 1.1s steps(2, end) infinite",
+        "grid-drift": "drift 60s linear infinite",
+      },
+      keyframes: {
+        blink: { "50%": { opacity: "0" } },
+        drift: { from: { backgroundPosition: "0 0" }, to: { backgroundPosition: "40px 40px" } },
       },
     },
   },

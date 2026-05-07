@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+ * Keyframes are defined directly here (not pulled from tailwind.config)
+ * so that the inline `animation: drift` on body and any CSS component rule
+ * can reference them without going through Tailwind utility class generation.
+ * Tailwind's generated `animate-grid-drift` utility class also works for
+ * element-level use — both approaches are consistent.
+ */
+@layer base {
+  @keyframes drift {
+    from { background-position: 0 0; }
+    to { background-position: 40px 40px; }
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html { color-scheme: dark; }
+  body {
+    @apply bg-bg-base text-fg font-mono;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: drift 80s linear infinite;
+  }
+  ::selection { background: rgba(0,255,136,0.3); color: #fff; }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .glass {
+    @apply bg-glass-fill border border-glass-border backdrop-blur-glass rounded-xl;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 8px 32px -12px rgba(0,0,0,0.6),
+      0 0 40px -20px rgba(0,255,136,0.15);
   }
+  .glass-strong {
+    @apply bg-glass-fillStrong border border-glass-border backdrop-blur-glass rounded-xl;
+  }
+  .terminal-prompt::before { content: "> "; @apply text-accent-green; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
