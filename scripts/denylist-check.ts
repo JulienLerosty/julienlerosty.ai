@@ -19,8 +19,12 @@ const DENYLIST: { pattern: RegExp; label: string }[] = [
 const SCAN_EXTENSIONS = [".ts", ".tsx", ".js", ".jsx", ".md", ".mdx", ".json", ".yml", ".yaml"];
 const SKIP_DIRS = new Set(["node_modules", ".next", ".git", "out", "specs", "plans", "tests"]);
 // tests/ intentionally contains violation strings as test fixtures — exclude from production scan
-// scripts/denylist-check.ts itself is excluded via SKIP_PATHS
-const SKIP_PATHS = new Set(["scripts/denylist-check.ts"]);
+// scripts/ infrastructure files that intentionally embed denylist patterns as regex literals or docs
+const SKIP_PATHS = new Set([
+  "scripts/denylist-check.ts",
+  "scripts/weekly-update.ts",
+  "kb/_update-protocol.md",
+]);
 
 function* walk(dir: string): Generator<string> {
   for (const entry of readdirSync(dir)) {
