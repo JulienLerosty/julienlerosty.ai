@@ -1,5 +1,8 @@
 import { ChatHero } from "@/components/ChatHero";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
+import { SkillsConstellation } from "@/components/SkillsConstellation";
+import { LiveStatsStrip } from "@/components/LiveStatsStrip";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,7 +18,10 @@ export default function Home() {
       </header>
 
       <ChatHero />
+      <LiveStatsStrip />
       <CaseStudyGrid />
+      <SkillsConstellation />
+      <Footer />
     </main>
   );
 }
