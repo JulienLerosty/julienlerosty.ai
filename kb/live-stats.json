@@ -1,18 +1,18 @@
 {
-  "lastUpdated": "2026-05-06T00:00:00Z",
+  "lastUpdated": "2026-05-07T14:54:21.543Z",
   "stats": {
-    "agentsActive": 22,
-    "skillsCount": 89,
+    "agentsActive": 21014,
+    "skillsCount": 76,
     "marketplaceSkillsAvailable": 21000,
     "tradingBotUptimeDays": 380,
-    "tradingBotUptimePct": 99.2,
-    "weeklyChangesShipped": 1
+    "tradingBotUptimePct": 99,
+    "weeklyChangesShipped": 21090
   },
   "recentShipments": [
     {
-      "date": "2026-05-06",
-      "title": "Initial portfolio launch",
-      "summary": "First commit of the agent-first portfolio: chat hero, 5 case studies, weekly auto-update infrastructure."
+      "date": "2026-05-07",
+      "title": "Weekly auto-update",
+      "summary": "21014 agents · 76 skills · 21090 changes this week"
     }
   ]
 }
