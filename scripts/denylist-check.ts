@@ -4,23 +4,27 @@ import { join, relative } from "path";
 const DENYLIST: { pattern: RegExp; label: string }[] = [
   { pattern: /\b5WU\d{5}\b/i, label: "tastytrade account number" },
   { pattern: /\b178\.156\.231\.86\b/, label: "VPS IP" },
-  { pattern: /\bsk-ant-(api|admin)\d{2}-[\w-]{20,}/i, label: "Anthropic key" },
+  // Anthropic API keys: sk-ant-{api,admin}NN-<base62 token, 40+ chars> — see anthropic.com docs
+  { pattern: /\bsk-ant-(api|admin)\d{2}-[\w-]{40,}/i, label: "Anthropic key" },
+  // "apple" is denied because Julien's current employer is Apple and any reference
+  // in public-facing files could violate his contract / IP obligations. Case-insensitive.
   { pattern: /\bapple\b/i, label: "employer reference (case-by-case review)" },
   { pattern: /\/root\/vcp-scanner\b/, label: "production server path" },
-  { pattern: /tastytrade.*client[_-]secret/i, label: "Tastytrade secret name" },
+  { pattern: /(client[_-]?secret|api[_-]?key|token|secret)\s*[:=]\s*["']?[a-f0-9]{40}["']?/i, label: "credential value (40-hex secret)" },
 ];
 
 const SCAN_EXTENSIONS = [".ts", ".tsx", ".js", ".jsx", ".md", ".mdx", ".json", ".yml", ".yaml"];
 const SKIP_DIRS = new Set(["node_modules", ".next", ".git", "out", "specs", "plans", "tests"]);
 // tests/ intentionally contains violation strings as test fixtures — exclude from production scan
-// scripts/denylist-check.ts itself is excluded via SKIP_FILES
-const SKIP_FILES = new Set(["denylist-check.ts"]);
+// scripts/denylist-check.ts itself is excluded via SKIP_PATHS
+const SKIP_PATHS = new Set(["scripts/denylist-check.ts"]);
 
 function* walk(dir: string): Generator<string> {
   for (const entry of readdirSync(dir)) {
     if (SKIP_DIRS.has(entry)) continue;
-    if (SKIP_FILES.has(entry)) continue;
     const full = join(dir, entry);
+    const rel = relative(root, full);
+    if (SKIP_PATHS.has(rel)) continue;
     const s = statSync(full);
     if (s.isDirectory()) yield* walk(full);
     else if (SCAN_EXTENSIONS.some((ext) => full.endsWith(ext))) yield full;

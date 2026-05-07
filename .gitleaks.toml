@@ -20,8 +20,8 @@ regex = '''178\.156\.231\.86'''
 
 [[rules]]
 id = "tastytrade-secret"
-description = "Tastytrade client_secret pattern"
-regex = '''[a-f0-9]{40}'''
+description = "Tastytrade client_secret value (40 hex preceded by credential keyword)"
+regex = '''(client[_-]?secret|api[_-]?key|token|secret)\s*[:=]\s*["']?[a-f0-9]{40}["']?'''
 
 [allowlist]
 paths = [

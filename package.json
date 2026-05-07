@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "denylist": "tsx scripts/denylist-check.ts",
-    "secscan": "(command -v gitleaks > /dev/null && gitleaks detect --source . --config .gitleaks.toml --no-banner || echo 'gitleaks not installed locally — relying on CI') && npm run denylist"
+    "gitleaks-or-skip": "if command -v gitleaks > /dev/null 2>&1; then gitleaks detect --source . --config .gitleaks.toml --no-banner; else echo 'gitleaks not installed locally — relying on CI'; fi",
+    "secscan": "npm run gitleaks-or-skip && npm run denylist"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.95.0",
