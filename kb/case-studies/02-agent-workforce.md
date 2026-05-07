@@ -8,7 +8,7 @@ domains: [agents, orchestration, claude]
 # 22-Agent Self-Routing Workforce
 
 ## Hook
-A single chat thread is the wrong abstraction for a knowledge worker. I built a custom team of 22 specialized agents that route work to themselves based on the request, with a neural layer that learns from outcomes.
+A single chat thread is the wrong abstraction for a knowledge worker. I built a custom team of 22 specialized agents — a coordinator parses every prompt and routes it to the right specialist, with a neural layer that learns from outcomes.
 
 ## Problem
 Generic LLM chat treats every request the same. But "deploy this to Vercel," "review my resume," "audit my SOX workpapers," and "scan for VCP setups" need wildly different context, tools, and tone. Routing manually breaks the flow.
@@ -22,7 +22,7 @@ Generic LLM chat treats every request the same. But "deploy this to Vercel," "re
 - A skill library with progressive disclosure (89 always-loaded + 21K available on demand)
 
 ## Outcomes
-- 1,400+ marketplace skills + 22 custom agents + 135 subagents — all reachable through one entry point
+- 1,400+ installed skills + 21K+ available on demand + 22 custom agents + 135 subagents — all reachable through one entry point
 - Routing accuracy on test queries: 90%+
 - Context bloat reduced significantly via progressive disclosure
 - Self-improvement loop: feedback from outcomes retrains the routing model

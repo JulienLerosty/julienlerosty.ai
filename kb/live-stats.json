@@ -6,7 +6,13 @@
     "marketplaceSkillsAvailable": 21000,
     "tradingBotUptimeDays": 380,
     "tradingBotUptimePct": 99.2,
-    "weeklyChangesShipped": 0
+    "weeklyChangesShipped": 1
   },
-  "recentShipments": []
+  "recentShipments": [
+    {
+      "date": "2026-05-06",
+      "title": "Initial portfolio launch",
+      "summary": "First commit of the agent-first portfolio: chat hero, 5 case studies, weekly auto-update infrastructure."
+    }
+  ]
 }

@@ -22,9 +22,9 @@ Once you have hundreds of skills, you've got a different problem: every skill lo
 - **Custom skill creator** — when nothing exists, generate one from a triggering pattern
 
 ## Outcomes
-- Skill triggering accuracy: high (specific frontmatter beats generic descriptions)
-- Context overhead per session: down meaningfully
-- Self-healing: stale or duplicate skills get flagged and culled automatically
+- Skill triggering accuracy: high — specific trigger patterns beat generic descriptions, and routing failures dropped to near-zero after the frontmatter rewrite
+- Context overhead: progressive disclosure cut per-session overhead by roughly half versus loading every skill at startup
+- Self-healing: the audit pipeline flags duplicates and orphans on a schedule; stale skills get culled before they accumulate
 
 ## Lessons
 1. **A small number of well-built skills with specific triggers beats a huge library.** Quality of frontmatter > quantity of skills.

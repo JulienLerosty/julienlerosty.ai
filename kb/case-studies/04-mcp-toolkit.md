@@ -1,14 +1,14 @@
 ---
 id: mcp-toolkit
 title: MCP Server Toolkit
-hook: MCPs are the new APIs.
+hook: I gave Claude a typed contract with every app I use daily.
 domains: [mcp, integrations, claude]
 ---
 
 # MCP Server Toolkit
 
 ## Hook
-The Model Context Protocol turns native macOS apps and external services into first-class tools for an AI agent. I've built MCPs that wire Claude into Keynote, TradingView, and other surfaces I use daily.
+Most "AI integrations" are screenshots and prayer. The Model Context Protocol gave me a way to hold a typed contract with every app I use daily — Keynote, TradingView, custom internal tools — so Claude can use them like any other tool.
 
 ## Problem
 Most "AI integrations" are brittle screenshots-and-prayer. MCPs let an agent hold a typed contract with an external system, with capability discovery, structured tool calls, and consistent error semantics.

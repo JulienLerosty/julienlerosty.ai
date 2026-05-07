@@ -16,9 +16,9 @@ Static portfolios go stale. Manually-updated ones decay. A portfolio for an *AI 
 ## Architecture (shape)
 - A scheduled remote agent runs every Monday 8 AM PT
 - It walks an allowlisted set of paths (no employer references, no credentials, no servers)
-- It diffs against `kb/snapshot.json` to compute "what shipped this week"
+- It diffs against a weekly snapshot to compute "what shipped this week"
 - A sanitization filter strips anything denylisted before write
-- Updated `kb/live-stats.json` + any regenerated case studies → git commit + push
+- Updated stats and any regenerated case studies → git commit + push
 - Vercel auto-deploys
 - Discord webhook fires the changelog
 
