@@ -1,4 +1,5 @@
 import { ChatHero } from "@/components/ChatHero";
+import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </header>
 
       <ChatHero />
+      <CaseStudyGrid />
     </main>
   );
 }

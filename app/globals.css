@@ -51,6 +51,40 @@
   .motion-cursor {
     animation: blink 1.1s steps(2, end) infinite;
   }
+  .markdown-body {
+    @apply text-fg text-sm leading-relaxed;
+  }
+  .markdown-body h1 { @apply text-2xl font-bold mt-6 mb-3 text-fg; }
+  .markdown-body h2 { @apply text-lg font-bold mt-6 mb-2 text-accent-green; }
+  .markdown-body h3 { @apply text-base font-bold mt-4 mb-2 text-fg; }
+  .markdown-body p { @apply my-3; }
+  .markdown-body strong { @apply text-fg font-bold; }
+  .markdown-body em { @apply italic text-fg-muted; }
+  .markdown-body ul, .markdown-body ol { @apply my-3 ml-6; }
+  .markdown-body ul { @apply list-disc; }
+  .markdown-body ol { @apply list-decimal; }
+  .markdown-body li { @apply my-1; }
+  .markdown-body code {
+    @apply px-1.5 py-0.5 rounded text-xs;
+    background: rgba(0,255,136,0.08);
+    color: #00ff88;
+  }
+  .markdown-body pre {
+    @apply my-4 p-4 rounded-lg overflow-x-auto text-xs;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .markdown-body pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .markdown-body blockquote {
+    @apply border-l-2 border-accent-green pl-4 my-4 italic text-fg-muted;
+  }
+  .markdown-body hr {
+    @apply my-6 border-glass-borderSubtle;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
