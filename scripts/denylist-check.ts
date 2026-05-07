@@ -17,13 +17,14 @@ const DENYLIST: { pattern: RegExp; label: string }[] = [
 ];
 
 const SCAN_EXTENSIONS = [".ts", ".tsx", ".js", ".jsx", ".md", ".mdx", ".json", ".yml", ".yaml"];
-const SKIP_DIRS = new Set(["node_modules", ".next", ".git", "out", "specs", "plans", "tests"]);
+const SKIP_DIRS = new Set(["node_modules", ".next", ".git", "out", "specs", "plans", "tests", "social"]);
 // tests/ intentionally contains violation strings as test fixtures — exclude from production scan
 // scripts/ infrastructure files that intentionally embed denylist patterns as regex literals or docs
+// social/ and PLAYBOOK.md are gitignored local-only files; their meta-references are not leaks
 const SKIP_PATHS = new Set([
   "scripts/denylist-check.ts",
   "scripts/weekly-update.ts",
-  "kb/_update-protocol.md",
+  "PLAYBOOK.md",
 ]);
 
 function* walk(dir: string): Generator<string> {
