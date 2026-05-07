@@ -1,0 +1,75 @@
+{
+  "lastUpdated": "2026-05-06",
+  "skills": [
+    {
+      "rank": 1,
+      "name": "Multi-Agent Orchestration",
+      "evidence": "22-agent self-routing workforce with neural routing layer",
+      "domains": ["agents", "infra"],
+      "icon": "network"
+    },
+    {
+      "rank": 2,
+      "name": "MCP Server Development",
+      "evidence": "Keynote + TradingView MCPs in production",
+      "domains": ["mcp", "integrations"],
+      "icon": "plug"
+    },
+    {
+      "rank": 3,
+      "name": "Production Trading Bot Engineering",
+      "evidence": "Multi-bot options fleet, >99% uptime",
+      "domains": ["automation", "python"],
+      "icon": "trending-up"
+    },
+    {
+      "rank": 4,
+      "name": "Claude Skill Architecture",
+      "evidence": "89 essential + 21K library with progressive disclosure",
+      "domains": ["claude", "design"],
+      "icon": "layers"
+    },
+    {
+      "rank": 5,
+      "name": "RAG System Design (multi-strategy)",
+      "evidence": "Classic + Graph + Vectorless with neural router",
+      "domains": ["rag", "claude"],
+      "icon": "search"
+    },
+    {
+      "rank": 6,
+      "name": "Prompt Engineering and Caching",
+      "evidence": "Cost-optimized production chat agents",
+      "domains": ["claude", "cost"],
+      "icon": "zap"
+    },
+    {
+      "rank": 7,
+      "name": "Agent Memory Systems",
+      "evidence": "3-tier memory (recent, long-term, project)",
+      "domains": ["memory", "agents"],
+      "icon": "brain"
+    },
+    {
+      "rank": 8,
+      "name": "Cron-Scheduled Autonomous Agents",
+      "evidence": "Self-updating portfolio + nightly memory consolidation",
+      "domains": ["automation", "ops"],
+      "icon": "clock"
+    },
+    {
+      "rank": 9,
+      "name": "Domain Expertise Bridging",
+      "evidence": "RF/wireless engineer to AI/agents integration patterns",
+      "domains": ["domain", "wireless"],
+      "icon": "radio"
+    },
+    {
+      "rank": 10,
+      "name": "Security-First Public AI Systems",
+      "evidence": "Denylist + gitleaks + sanitization for public agent endpoints",
+      "domains": ["security", "ops"],
+      "icon": "shield"
+    }
+  ]
+}
