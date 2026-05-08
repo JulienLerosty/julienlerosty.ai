@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Julien Lerosty — AI Engineer (Agents &amp; Automation)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Calibri', Arial, sans-serif;
+    font-size: 10.5pt;
+    color: #1a1a1a;
+    max-width: 8.5in;
+    margin: 0.65in auto;
+    line-height: 1.35;
+  }
+  h1 { font-size: 22pt; letter-spacing: 0.5px; font-weight: 700; }
+  .subtitle { font-size: 13pt; color: #0d8050; font-weight: 600; margin: 2px 0 4px 0; }
+  .contact { font-size: 9.5pt; color: #444; margin-bottom: 10px; }
+  .contact a { color: #0d8050; text-decoration: none; }
+  .summary { margin: 8px 0 10px 0; font-size: 10.5pt; line-height: 1.4; }
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0d8050;
+    border-bottom: 1.5px solid #0d8050;
+    padding-bottom: 2px;
+    margin: 12px 0 6px 0;
+  }
+  .competencies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px 30px;
+    margin-bottom: 4px;
+  }
+  .comp-item { font-size: 10pt; padding: 1px 0; }
+  .comp-item::before { content: "• "; color: #0d8050; font-weight: bold; }
+  .job { margin-bottom: 10px; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-weight: 700; font-size: 10.5pt; }
+  .job-date { font-size: 10pt; color: #333; white-space: nowrap; }
+  .job-company { font-size: 10pt; color: #444; font-style: italic; margin-bottom: 3px; }
+  ul { padding-left: 16px; margin-top: 2px; }
+  li { margin: 2px 0; font-size: 10.5pt; line-height: 1.35; }
+  .skills-block { margin: 3px 0; font-size: 10pt; }
+  .skills-label { font-weight: 700; }
+  .cert { font-size: 10.5pt; margin: 2px 0; }
+  .cert-name { font-weight: 700; }
+  .edu-line { margin: 2px 0; font-size: 10.5pt; }
+  @media print {
+    body { margin: 0.5in; }
+    .job { page-break-inside: avoid; }
+    .section-title { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>JULIEN LEROSTY</h1>
+<div class="subtitle">AI Engineer (Agents &amp; Automation)</div>
+<div class="contact">
+  Cupertino, CA &nbsp;|&nbsp; (408) 667-1735 &nbsp;|&nbsp; julien.lerosty@gmail.com &nbsp;|&nbsp;
+  <a href="https://linkedin.com/in/julienlerosty">linkedin.com/in/julienlerosty</a> &nbsp;|&nbsp;
+  <a href="https://julienlerosty.ai">julienlerosty.ai</a>
+</div>
+
+<div class="summary">
+  AI engineer with 13+ years in production engineering, now building agentic systems at the intersection of LLM
+  orchestration and real-world automation. Architected a self-routing 22-agent workforce, MCP servers, and a
+  multi-bot trading fleet running real money on a remote VPS with &gt;99% uptime over a year. Deep expertise in
+  Claude tooling — streaming, prompt caching, RAG, agent orchestration — and security-first public AI deployments.
+  RF/wireless background (silicon bring-up through mass production) brings hardware engineer's discipline to LLM
+  systems: systematic debugging, measurement-driven iteration, zero tolerance for silent failures.
+</div>
+
+<div class="section-title">Core Competencies</div>
+<div class="competencies-grid">
+  <div class="comp-item">Multi-Agent Orchestration (Claude, MCP)</div>
+  <div class="comp-item">Production Autonomous Bot Engineering</div>
+  <div class="comp-item">RAG System Design (similarity, graph, vectorless)</div>
+  <div class="comp-item">Prompt Engineering &amp; Caching</div>
+  <div class="comp-item">MCP Server Development</div>
+  <div class="comp-item">Agent Memory &amp; Skill Architecture</div>
+  <div class="comp-item">Security-First Public AI Systems</div>
+  <div class="comp-item">Claude Skill Architecture (89 essential + 21K on-demand)</div>
+  <div class="comp-item">Cron-Scheduled Autonomous Agents</div>
+  <div class="comp-item">Wireless / RF Domain Expertise (UWB, Wi-Fi, BT, NFC)</div>
+</div>
+
+<div class="section-title">Selected AI Engineering Projects</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">julienlerosty.ai — Agent-First Portfolio</span>
+    <span class="job-date">2024 — Present</span>
+  </div>
+  <ul>
+    <li>Agent-first portfolio that updates itself weekly via cron-triggered Claude agents. Streaming Claude chat hero served over a curated knowledge base; pre-commit security scanning (gitleaks + custom denylist); auto-deploy via Vercel CI/CD. Public on GitHub. Full case study at <strong>julienlerosty.ai</strong>.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">22-Agent Self-Routing Workforce</span>
+    <span class="job-date">2024 — Present</span>
+  </div>
+  <ul>
+    <li>Coordinator + neural routing layer + RAG router across 1,400+ installed and 21K+ on-demand skills. Routes every user request through a trained prediction model (250 patterns, 5 coordination models + 8 pre-trained domain models) to the best-fit agent with zero manual dispatch. Includes GraphRAG for relationship traversal and vectorless RAG for hierarchical navigation.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Multi-Bot Autonomous Trading Fleet</span>
+    <span class="job-date">2024 — Present</span>
+  </div>
+  <ul>
+    <li>Real-money production fleet of momentum-strategy bots running on a remote Ubuntu VPS as systemd services with &gt;99% uptime over 12+ months. Architecture includes shared SPY regime filtering, cross-bot position capping, auto-scaling by account NLV, and a strict decommission protocol to prevent orphan processes. Fleet health monitored via a live web dashboard.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">MCP Server Toolkit</span>
+    <span class="job-date">2024 — Present</span>
+  </div>
+  <ul>
+    <li>Custom MCP servers wiring Claude into native macOS applications and external services (Keynote, TradingView, internal tools). Enables Claude agents to drive desktop automation, extract real-time market data, and interact with proprietary workflows without browser intermediaries.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Skills Library Architecture</span>
+    <span class="job-date">2024 — Present</span>
+  </div>
+  <ul>
+    <li>Progressive-disclosure tiered skill ecosystem with auto-install, dedup audit, and lifecycle management. Tier 1 (89 essential skills, always loaded) + Tier 2 (21K+ on-demand). Auto-compaction keeps each skill under 500 lines with heavy content extracted to references/. Reduced per-session context overhead by ~50% versus flat-loading all skills.</li>
+  </ul>
+</div>
+
+<div class="section-title">Professional Experience</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Wireless Field Design Engineer</span>
+    <span class="job-date">Aug 2024 — Present</span>
+  </div>
+  <div class="job-company">Major Cupertino Tech Company — Cupertino, CA</div>
+  <ul>
+    <li>Perform R&amp;D-level RF characterization on Wi-Fi, Bluetooth, and UWB hardware across the consumer wireless device portfolio — from prototype silicon to mass production</li>
+    <li>Characterize RF performance metrics including Max Range, SNR, RSSI, Range Error, EVM, throughput, sensitivity, and antenna diversity across hardware revisions and environmental conditions</li>
+    <li>Design and build RF test benches with shielded enclosures, controlled attenuation networks, and automated instrument control for repeatable, production-scalable hardware validation</li>
+    <li>Debug multi-radio co-existence issues at the hardware level, isolating interference between Wi-Fi, BT, and UWB radios through systematic RF analysis and protocol correlation</li>
+    <li>Develop Python automation for RF instrument control (spectrum analyzers, signal generators, Keysight UXM), data collection, and post-processing pipelines — reducing manual bench time and improving measurement repeatability</li>
+    <li>Perform hardware-level power analysis measuring current draw across wireless operating modes (idle, scan, TX, RX, sleep) to identify chipset-level power optimization opportunities</li>
+    <li>Lead Field-to-Lab correlation initiative, designing lab fixtures that reproduce field RF conditions for efficient hardware iteration between design revisions</li>
+    <li>Execute device bring-up on Linux-based platforms, debug hardware connectivity issues using internal device logs and RF trace analysis</li>
+    <li>Coordinate co-existence issue resolution from detection through root-cause analysis to closure, interfacing with hardware, firmware, and RF system design teams</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Technical Program Manager</span>
+    <span class="job-date">Jul 2021 — Oct 2023</span>
+  </div>
+  <div class="job-company">Cadence Design Systems — San Jose, CA</div>
+  <ul>
+    <li>Directed multi-year launch of Cadence's OnCloud SaaS platform — company's top priority — coordinating 100+ cross-functional stakeholders across hardware, software, QA, and business teams within scope and budget</li>
+    <li>Managed Information Security Program protecting all Cadence source code across build and integration systems, impacting 6,000+ engineering employees</li>
+    <li>Presented data-driven technical program status, risks, and KPI reports to C-level executives</li>
+    <li>Led IT systems integration for M&amp;A transaction (20 R&amp;D employees), ensuring hardware and software compliance with corporate standards</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">NFC RF Hardware Engineer / Technical Project Manager</span>
+    <span class="job-date">Apr 2010 — Jun 2021</span>
+  </div>
+  <div class="job-company">FIME — France &amp; United States</div>
+  <ul>
+    <li>Designed, assembled, calibrated, and deployed RF test benches globally for NFC chipset validation — including electronics assembly, fixture fabrication, and measurement circuit troubleshooting — generating <strong>$2M in revenue</strong></li>
+    <li>Achieved <strong>95% first-pass compliance rate</strong> across NFC hardware in mobile devices and payment terminals per ISO 14443 and EMVCo standards, reducing rework cycles and accelerating time-to-market</li>
+    <li>Performed hardware-level RF testing: analog characterization, digital protocol validation, interoperability testing, and performance benchmarking with spectrum analyzers, signal generators, and oscilloscopes</li>
+    <li>Conducted root-cause analysis of hardware certification failures using systematic RF measurement and component-level debug, <strong>reducing failure rates by 15%</strong></li>
+    <li>Led 30+ NFC product certification projects ($10K–$1M+), managing test scope, schedules, customer deliverables, and cross-functional team coordination</li>
+    <li>Supported <strong>100+ customers globally</strong> across APAC, Europe, and Americas with hands-on hardware validation, RF bench installation, and technical training</li>
+    <li>Invented 3 Axis Solution test equipment — first software accredited by EMVCo to perform official NFC contactless certification</li>
+  </ul>
+</div>
+
+<div class="section-title">Education</div>
+<div class="edu-line"><strong>Master of Science &amp; Bachelor of Science, Electrical Engineering and Automation</strong> &nbsp;—&nbsp; University of Caen, France</div>
+
+<div class="section-title">Certifications</div>
+<div class="cert"><span class="cert-name">Project Management Professional (PMP)</span> — Project Management Institute, 2017</div>
+<div class="cert"><span class="cert-name">Professional Scrum Master I (PSM I)</span> — Scrum.org, 2018</div>
+
+<div class="section-title">Technical Proficiencies</div>
+<div class="skills-block"><span class="skills-label">AI / LLM TOOLING:</span> Claude API (streaming, prompt caching), Anthropic SDK, MCP servers, RAG (similarity + graph + vectorless), agent orchestration, prompt engineering</div>
+<div class="skills-block"><span class="skills-label">PROGRAMMING:</span> Python (production bots, scripting, data pipelines), TypeScript / Next.js (full-stack), Linux (CLI, systemd, cron)</div>
+<div class="skills-block"><span class="skills-label">INFRASTRUCTURE:</span> Vercel, GitHub Actions, Docker, gitleaks, automated deploy pipelines</div>
+<div class="skills-block"><span class="skills-label">WIRELESS / RF:</span> Wi-Fi (802.11a/b/g/n/ac/ax/be), Bluetooth (BR/EDR, BLE 5.x), UWB (802.15.4z), NFC (ISO 14443, EMVCo), Thread, V2X</div>
+<div class="skills-block"><span class="skills-label">LAB EQUIPMENT:</span> Keysight UXM, Spectrum / Vector Signal Analyzers, Signal Generators, Network Analyzers, Oscilloscopes, Power Meters, Programmable PSUs, Soldering &amp; Assembly Tools</div>
+
+</body>
+</html>
