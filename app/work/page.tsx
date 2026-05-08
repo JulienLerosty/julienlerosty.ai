@@ -2,7 +2,7 @@
  * /work — Julien's services page
  *
  * Cal.com handles:
- *   - Strategy Call:     julienlerosty/30min                  ← UPDATE when ready
+ *   - Strategy Call:     julienlerosty/ai-engineering-audit   (temporarily routed to audit)
  *   - Engineering Audit: julienlerosty/ai-engineering-audit   (live)
  *
  * Payment gating is configured on the Cal.com side (Stripe integration in your Cal.com dashboard).
@@ -23,7 +23,7 @@ import { EmailCapture } from "@/components/EmailCapture";
 import { Footer } from "@/components/Footer";
 import { TopNav } from "@/components/TopNav";
 
-const CAL_SLUG_STRATEGY = "julienlerosty/30min";
+const CAL_SLUG_STRATEGY = "julienlerosty/ai-engineering-audit";
 const CAL_SLUG_AUDIT = "julienlerosty/ai-engineering-audit";
 
 function useCalEmbed() {
