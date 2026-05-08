@@ -1,39 +1,41 @@
 import { describe, it, expect } from "vitest";
 import { isAllowedPath, computeStats, isCleanForPublish } from "@/scripts/weekly-update";
 
+const HOME = process.env.HOME ?? "";
+
 describe("weekly-update / isAllowedPath", () => {
-  it("denies Apple-marked paths", () => {
-    expect(isAllowedPath("/Users/julienlerosty/Apple/internal")).toBe(false);
-    expect(isAllowedPath("/Users/julienlerosty/Desktop/AppleNotes")).toBe(false);
+  it("denies employer-marked paths", () => {
+    expect(isAllowedPath(`${HOME}/Apple/internal`)).toBe(false);
+    expect(isAllowedPath(`${HOME}/Desktop/AppleNotes`)).toBe(false);
   });
   it("denies credential paths", () => {
-    expect(isAllowedPath("/Users/julienlerosty/.ssh/id_rsa")).toBe(false);
-    expect(isAllowedPath("/Users/julienlerosty/something/credentials.txt")).toBe(false);
-    expect(isAllowedPath("/Users/julienlerosty/foo/.env.local")).toBe(false);
+    expect(isAllowedPath(`${HOME}/.ssh/id_rsa`)).toBe(false);
+    expect(isAllowedPath(`${HOME}/something/credentials.txt`)).toBe(false);
+    expect(isAllowedPath(`${HOME}/foo/.env.local`)).toBe(false);
   });
   it("denies private memory", () => {
     expect(
-      isAllowedPath("/Users/julienlerosty/.claude/projects/-Users-julienlerosty/memory/foo.md")
+      isAllowedPath(`${HOME}/.claude/projects/-Users-julienlerosty/memory/foo.md`)
     ).toBe(false);
   });
   it("denies portfolio internal docs", () => {
-    expect(isAllowedPath("/Users/julienlerosty/Desktop/projects/portfolio/social/01.md")).toBe(false);
-    expect(isAllowedPath("/Users/julienlerosty/Desktop/projects/portfolio/PLAYBOOK.md")).toBe(false);
-    expect(isAllowedPath("/Users/julienlerosty/Desktop/projects/portfolio/specs/x.md")).toBe(false);
-    expect(isAllowedPath("/Users/julienlerosty/Desktop/projects/portfolio/plans/x.md")).toBe(false);
+    expect(isAllowedPath(`${HOME}/Desktop/projects/portfolio/social/01.md`)).toBe(false);
+    expect(isAllowedPath(`${HOME}/Desktop/projects/portfolio/PLAYBOOK.md`)).toBe(false);
+    expect(isAllowedPath(`${HOME}/Desktop/projects/portfolio/specs/x.md`)).toBe(false);
+    expect(isAllowedPath(`${HOME}/Desktop/projects/portfolio/plans/x.md`)).toBe(false);
   });
   it("denies vcp-scanner-trading code", () => {
     expect(
-      isAllowedPath("/Users/julienlerosty/Desktop/projects/vcp-scanner-trading/momentum_bot.py")
+      isAllowedPath(`${HOME}/Desktop/projects/vcp-scanner-trading/momentum_bot.py`)
     ).toBe(false);
     expect(
-      isAllowedPath("/Users/julienlerosty/Desktop/projects/vcp-scanner-trading/data/positions.json")
+      isAllowedPath(`${HOME}/Desktop/projects/vcp-scanner-trading/data/positions.json`)
     ).toBe(false);
   });
   it("allows project portfolio scan paths", () => {
-    expect(isAllowedPath("/Users/julienlerosty/Desktop/projects/portfolio")).toBe(true);
-    expect(isAllowedPath("/Users/julienlerosty/.claude/skills/some-skill")).toBe(true);
-    expect(isAllowedPath("/Users/julienlerosty/.agents/skills/agent-x")).toBe(true);
+    expect(isAllowedPath(`${HOME}/Desktop/projects/portfolio`)).toBe(true);
+    expect(isAllowedPath(`${HOME}/.claude/skills/some-skill`)).toBe(true);
+    expect(isAllowedPath(`${HOME}/.agents/skills/agent-x`)).toBe(true);
   });
 });
 
