@@ -14,8 +14,21 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://julienlerosty.ai"),
   title: "Julien Lerosty // AI Engineer",
   description: "Wireless engineer building production AI agents. The portfolio is the proof — try the chat.",
+  icons: {
+    icon: "/icon.png",
+  },
+  openGraph: {
+    title: "Julien Lerosty // AI Engineer",
+    description: "Wireless engineer building production AI agents. The portfolio is the proof — try the chat.",
+    images: ["/avatar.png"],
+  },
+  twitter: {
+    card: "summary",
+    images: ["/avatar.png"],
+  },
 };
 
 export default function RootLayout({
