@@ -85,6 +85,9 @@
   .markdown-body hr {
     @apply my-6 border-glass-borderSubtle;
   }
+  .markdown-body a {
+    @apply text-accent-green hover:underline transition-colors;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

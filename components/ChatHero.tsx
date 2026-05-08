@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import { Glass } from "@/components/ui/Glass";
 import { Button } from "@/components/ui/Button";
 
@@ -111,7 +112,13 @@ export function ChatHero() {
             <div className="text-xs text-fg-muted mb-1">
               {m.role === "user" ? "you" : "julien.lerosty"}
             </div>
-            <div className="text-sm whitespace-pre-wrap leading-relaxed">{m.content}</div>
+            {m.role === "assistant" ? (
+              <div className="markdown-body text-sm">
+                <ReactMarkdown>{m.content}</ReactMarkdown>
+              </div>
+            ) : (
+              <div className="text-sm whitespace-pre-wrap leading-relaxed">{m.content}</div>
+            )}
           </div>
         ))}
       </div>
@@ -157,6 +164,13 @@ export function ChatHero() {
           send
         </Button>
       </form>
+
+      <div className="mt-4 pt-3 border-t border-glass-borderSubtle text-xs text-fg-muted">
+        <span className="terminal-prompt">working on something hard? </span>
+        <a href="/work" className="text-accent-green hover:text-accent-cyan transition-colors">
+          book a 30-min call →
+        </a>
+      </div>
     </Glass>
   );
 }

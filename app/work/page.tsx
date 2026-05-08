@@ -21,6 +21,7 @@ import { Glass } from "@/components/ui/Glass";
 import { Button } from "@/components/ui/Button";
 import { EmailCapture } from "@/components/EmailCapture";
 import { Footer } from "@/components/Footer";
+import { TopNav } from "@/components/TopNav";
 
 const CAL_SLUG_STRATEGY = "julienlerosty/30min";
 const CAL_SLUG_AUDIT = "julienlerosty/audit-call";
@@ -89,7 +90,9 @@ export default function WorkPage() {
   useCalEmbed();
 
   return (
-    <main className="min-h-screen p-4 md:p-8">
+    <>
+      <TopNav />
+      <main className="min-h-screen p-4 md:p-8">
       <header className="max-w-3xl mx-auto mb-12 mt-8">
         <div className="text-xs text-fg-muted mb-2 terminal-prompt">work with julien</div>
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
@@ -176,6 +179,7 @@ export default function WorkPage() {
       <EmailCapture />
       <Footer />
     </main>
+    </>
   );
 }
 

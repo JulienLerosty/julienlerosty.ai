@@ -31,6 +31,13 @@ export function Footer() {
           </a>
           <span>{"//"}</span>
           <a
+            href="/work"
+            className="hover:text-accent-green transition-colors"
+          >
+            work
+          </a>
+          <span>{"//"}</span>
+          <a
             href="/resume/julien-lerosty-ai-engineer.pdf"
             className="hover:text-accent-green transition-colors"
           >
