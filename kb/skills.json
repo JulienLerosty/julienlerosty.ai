@@ -84,6 +84,13 @@
       "evidence": "CoreMotion-based diagnostic app for wireless validation (attitude, pedometer, altimeter, head tracking)",
       "domains": ["sensors", "validation"],
       "icon": "activity"
+    },
+    {
+      "rank": 13,
+      "name": "Multi-Modal Content Pipelines",
+      "evidence": "End-to-end LLM + video generation: signal → script → ranked content → published",
+      "domains": ["automation", "content", "llm"],
+      "icon": "play"
     }
   ]
 }
