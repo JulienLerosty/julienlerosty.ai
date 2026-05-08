@@ -2,8 +2,8 @@
  * /work — Julien's services page
  *
  * Cal.com handles:
- *   - Strategy Call:   julienlerosty/30min       ← UPDATE to your real Cal.com slug
- *   - Engineering Audit: julienlerosty/audit-call ← UPDATE to your real Cal.com slug
+ *   - Strategy Call:     julienlerosty/30min                  ← UPDATE when ready
+ *   - Engineering Audit: julienlerosty/ai-engineering-audit   (live)
  *
  * Payment gating is configured on the Cal.com side (Stripe integration in your Cal.com dashboard).
  * No Stripe integration is required in this codebase.
@@ -24,7 +24,7 @@ import { Footer } from "@/components/Footer";
 import { TopNav } from "@/components/TopNav";
 
 const CAL_SLUG_STRATEGY = "julienlerosty/30min";
-const CAL_SLUG_AUDIT = "julienlerosty/audit-call";
+const CAL_SLUG_AUDIT = "julienlerosty/ai-engineering-audit";
 
 function useCalEmbed() {
   useEffect(() => {
