@@ -34,3 +34,6 @@ jobs:
 
       - name: Run denylist scanner
         run: npm run denylist
+
+      - name: Run tests
+        run: npm test
