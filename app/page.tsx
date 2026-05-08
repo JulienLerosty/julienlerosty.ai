@@ -2,6 +2,7 @@ import { ChatHero } from "@/components/ChatHero";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { SkillsConstellation } from "@/components/SkillsConstellation";
 import { LiveStatsStrip } from "@/components/LiveStatsStrip";
+import { EmailCapture } from "@/components/EmailCapture";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <LiveStatsStrip />
       <CaseStudyGrid />
       <SkillsConstellation />
+      <EmailCapture />
       <Footer />
     </main>
   );
