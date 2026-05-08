@@ -29,7 +29,11 @@ description = "Tastytrade client_secret value (40-hex preceded by credential key
 regex = '''(client[_-]?secret|api[_-]?key|access[_-]?token|auth[_-]?token|bearer[_-]?token)\s*[:=]\s*["']?[a-f0-9]{40}["']?'''
 
 [allowlist]
+description = "Test fixtures and scanner regex source files intentionally embed denylist patterns to verify the scanner blocks them. They contain FAKE example values."
 paths = [
   '''package-lock\.json$''',
   '''yarn\.lock$''',
+  '''^tests/.*\.test\.ts$''',
+  '''^scripts/denylist-check\.ts$''',
+  '''^scripts/weekly-update\.ts$''',
 ]
