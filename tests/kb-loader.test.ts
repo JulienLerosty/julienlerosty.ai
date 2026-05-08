@@ -2,13 +2,15 @@ import { describe, it, expect } from "vitest";
 import { loadKnowledgeBase } from "@/lib/kb-loader";
 
 describe("kb-loader", () => {
-  it("loads all 5 case studies", () => {
+  it("loads all 7 case studies", () => {
     const kb = loadKnowledgeBase();
-    expect(kb.caseStudies.length).toBe(5);
+    expect(kb.caseStudies.length).toBe(7);
     expect(kb.caseStudies.map((c) => c.id).sort()).toEqual([
       "agent-workforce",
       "mcp-toolkit",
       "meta-portfolio",
+      "motionlab",
+      "petit-francais",
       "skills-library",
       "trading-fleet",
     ]);
@@ -33,11 +35,11 @@ describe("kb-loader", () => {
     expect(kb.systemPrompt).toContain("MUST refuse");
   });
 
-  it("loads skills.json with 10 ranked skills", () => {
+  it("loads skills.json with 12 ranked skills", () => {
     const kb = loadKnowledgeBase();
-    expect(kb.skills.skills.length).toBe(10);
+    expect(kb.skills.skills.length).toBe(12);
     const ranks = kb.skills.skills.map((s) => s.rank);
-    expect(ranks).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    expect(ranks).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
     for (const s of kb.skills.skills) {
       expect(s.name).toBeTruthy();
       expect(s.evidence).toBeTruthy();

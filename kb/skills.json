@@ -70,6 +70,20 @@
       "evidence": "Denylist + gitleaks + sanitization for public agent endpoints",
       "domains": ["security", "ops"],
       "icon": "shield"
+    },
+    {
+      "rank": 11,
+      "name": "Native iOS Development (Swift / SwiftUI)",
+      "evidence": "Motion Lab + Le Petit Francais shipping on iOS 17+",
+      "domains": ["ios", "swift"],
+      "icon": "smartphone"
+    },
+    {
+      "rank": 12,
+      "name": "Sensor Integration & Validation Engineering",
+      "evidence": "CoreMotion-based diagnostic app for wireless validation (attitude, pedometer, altimeter, head tracking)",
+      "domains": ["sensors", "validation"],
+      "icon": "activity"
     }
   ]
 }
