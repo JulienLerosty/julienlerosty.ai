@@ -14,7 +14,7 @@ export function LiveStatsStrip() {
   ];
 
   return (
-    <section className="max-w-5xl mx-auto mt-16">
+    <section className="max-w-5xl mx-auto mt-24 md:mt-32">
       <div className="text-xs text-fg-muted mb-4 terminal-prompt">live (auto-updated weekly)</div>
       <Glass className="p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
         {items.map((it) => (

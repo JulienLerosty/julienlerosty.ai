@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
+import { clsx } from "clsx";
 import { Glass } from "@/components/ui/Glass";
 import type { CaseStudy } from "@/lib/kb-loader";
 
-export function CaseStudyCard({ cs }: { cs: CaseStudy }) {
+export function CaseStudyCard({ cs, featured = false }: { cs: CaseStudy; featured?: boolean }) {
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -31,8 +32,13 @@ export function CaseStudyCard({ cs }: { cs: CaseStudy }) {
 
   return (
     <>
-      <Glass
-        className="p-5 cursor-pointer hover:bg-glass-fillStrong transition-colors group"
+      {/* Double-bezel outer shell */}
+      <div
+        className={clsx(
+          "bg-white/[0.025] p-1.5 rounded-[20px] ring-1 ring-white/5 cursor-pointer group",
+          "transition-transform duration-200 ease-out hover:-translate-y-[2px]",
+          featured && "md:col-span-2"
+        )}
         onClick={() => setOpen(true)}
         role="button"
         tabIndex={0}
@@ -43,22 +49,25 @@ export function CaseStudyCard({ cs }: { cs: CaseStudy }) {
           }
         }}
       >
-        <div className="flex flex-wrap gap-2 mb-2">
-          {cs.domains.slice(0, 3).map((d) => (
-            <span
-              key={d}
-              className="text-[10px] uppercase tracking-wider text-accent-green/70 bg-accent-green/5 px-2 py-0.5 rounded"
-            >
-              {d}
-            </span>
-          ))}
+        {/* Inner core — radius math: 20 - 1.5*4 = 14 */}
+        <div className="bg-white/[0.04] rounded-[14px] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] group-hover:bg-white/[0.06] transition-colors duration-200 ease-out">
+          <div className="flex flex-wrap gap-2 mb-2">
+            {cs.domains.slice(0, 3).map((d) => (
+              <span
+                key={d}
+                className="text-[10px] uppercase tracking-wider text-accent-green/70 bg-accent-green/5 px-2 py-0.5 rounded"
+              >
+                {d}
+              </span>
+            ))}
+          </div>
+          <h3 className="text-lg font-bold mb-1 group-hover:text-accent-green transition-colors">
+            {cs.title}
+          </h3>
+          <p className="text-sm text-fg-muted italic">{cs.hook}</p>
+          <div className="mt-3 text-xs text-accent-cyan terminal-prompt">read</div>
         </div>
-        <h3 className="text-lg font-bold mb-1 group-hover:text-accent-green transition-colors">
-          {cs.title}
-        </h3>
-        <p className="text-sm text-fg-muted italic">{cs.hook}</p>
-        <div className="mt-3 text-xs text-accent-cyan terminal-prompt">read</div>
-      </Glass>
+      </div>
 
       {open && (
         <div
@@ -76,7 +85,7 @@ export function CaseStudyCard({ cs }: { cs: CaseStudy }) {
             <button
               ref={closeRef}
               onClick={() => setOpen(false)}
-              className="text-fg-muted hover:text-accent-green text-sm mb-4 terminal-prompt focus:outline-none focus:text-accent-green"
+              className="text-fg-muted hover:text-accent-green text-sm mb-4 terminal-prompt focus:outline-none focus:text-accent-green min-h-[44px] inline-flex items-center px-2 -ml-2"
               aria-label="close"
             >
               close

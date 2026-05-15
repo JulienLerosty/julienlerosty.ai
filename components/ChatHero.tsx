@@ -165,9 +165,15 @@ export function ChatHero() {
         </Button>
       </form>
 
+      {messages.length === 0 && !input.trim() && !streaming && (
+        <div className="text-[10px] text-fg-subtle mt-2 ml-3">
+          type a question or pick a starter above
+        </div>
+      )}
+
       <div className="mt-4 pt-3 border-t border-glass-borderSubtle text-xs text-fg-muted">
         <span className="terminal-prompt">working on something hard? </span>
-        <a href="/work" className="text-accent-green hover:text-accent-cyan transition-colors">
+        <a href="/work" className="text-accent-green hover:opacity-80 transition-opacity">
           book a 30-min call →
         </a>
       </div>

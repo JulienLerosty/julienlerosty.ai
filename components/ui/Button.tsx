@@ -11,7 +11,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     <button
       ref={ref}
       className={clsx(
-        "px-4 py-2 rounded-lg font-mono text-sm transition-all",
+        "px-4 py-2.5 min-h-[44px] rounded-lg font-mono text-sm",
+        "transition-[transform,background-color,border-color,color] duration-200 ease-out",
+        "active:scale-[0.97]",
         "border backdrop-blur-glass",
         variant === "primary" &&
           "bg-accent-green/10 border-accent-green/40 text-accent-green hover:bg-accent-green/20 active:bg-accent-green/30",

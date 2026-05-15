@@ -93,19 +93,19 @@ export default function WorkPage() {
     <>
       <TopNav />
       <main className="min-h-screen p-4 md:p-8">
-      <header className="max-w-3xl mx-auto mb-12 mt-8">
+      <header className="max-w-3xl mx-auto mb-16 md:mb-24 mt-8 md:mt-12">
         <div className="text-xs text-fg-muted mb-2 terminal-prompt">work with julien</div>
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+        <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-[-0.03em] leading-[1.05]">
           Hardware engineer{" "}
           <span className="text-accent-green">× AI agents.</span>
         </h1>
-        <p className="text-fg-muted mt-3 max-w-xl">
+        <p className="text-fg-muted mt-4 max-w-xl">
           I help RF/wireless/hardware engineers ship production AI systems that touch real
           consequences — not demos.
         </p>
       </header>
 
-      <section className="max-w-5xl mx-auto mb-16">
+      <section className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {packages.map((pkg) => (
             <Glass
@@ -117,7 +117,7 @@ export default function WorkPage() {
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-sm font-bold text-fg">{pkg.title}</span>
                   {"badge" in pkg && pkg.badge && (
-                    <span className="text-xs text-accent-cyan border border-accent-cyan/40 rounded px-1.5 py-0.5">
+                    <span className="text-xs text-fg-muted border border-glass-border rounded px-1.5 py-0.5">
                       {pkg.badge}
                     </span>
                   )}
@@ -153,7 +153,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto mb-16">
+      <section className="max-w-3xl mx-auto mt-24 md:mt-32">
         <div className="text-xs text-fg-muted mb-3 terminal-prompt">why work with me</div>
         <Glass className="p-6">
           <p className="text-sm text-fg-muted leading-relaxed">
@@ -186,15 +186,14 @@ export default function WorkPage() {
 /* Inline waitlist email capture for the cohort card */
 function EmailCaptureInline({ label }: { label: string }) {
   return (
-    <a
-      href="#newsletter"
-      onClick={(e) => {
-        e.preventDefault();
-        // Scroll to the EmailCapture component at the bottom of the page
+    <Button
+      type="button"
+      className="w-full justify-center text-center"
+      onClick={() => {
         document.querySelector("[data-newsletter]")?.scrollIntoView({ behavior: "smooth" });
       }}
     >
-      <Button className="w-full justify-center text-center">{label}</Button>
-    </a>
+      {label}
+    </Button>
   );
 }

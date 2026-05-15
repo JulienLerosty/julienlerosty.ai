@@ -40,7 +40,7 @@ export function EmailCapture() {
 
   if (alreadySubscribed || status === "success") {
     return (
-      <Glass className="p-6 max-w-3xl mx-auto w-full mb-12" data-newsletter>
+      <Glass className="p-6 max-w-3xl mx-auto w-full mt-24 md:mt-32 mb-16" data-newsletter>
         <div className="text-xs text-fg-muted terminal-prompt mb-1">newsletter</div>
         <div className="text-sm text-accent-green">
           subscribed — see you Monday
@@ -50,7 +50,7 @@ export function EmailCapture() {
   }
 
   return (
-    <Glass className="p-6 max-w-3xl mx-auto w-full mb-12" data-newsletter>
+    <Glass className="p-6 max-w-3xl mx-auto w-full mt-24 md:mt-32 mb-16" data-newsletter>
       <div className="text-xs text-fg-muted terminal-prompt mb-1">newsletter</div>
       <div className="mb-1 text-sm font-semibold text-fg">AI for hardware engineers — weekly</div>
       <div className="text-xs text-fg-muted mb-4">

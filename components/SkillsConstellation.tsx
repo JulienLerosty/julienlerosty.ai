@@ -4,7 +4,7 @@ import { Glass } from "@/components/ui/Glass";
 export function SkillsConstellation() {
   const { skills } = loadKnowledgeBase();
   return (
-    <section className="max-w-5xl mx-auto mt-16">
+    <section className="max-w-5xl mx-auto mt-24 md:mt-32">
       <div className="text-xs text-fg-muted mb-4 terminal-prompt">stack</div>
       <h2 className="text-2xl font-bold mb-6">Top AI engineering skills</h2>
       <Glass className="p-6">
@@ -22,7 +22,7 @@ export function SkillsConstellation() {
                     {s.domains.slice(0, 3).map((d) => (
                       <span
                         key={d}
-                        className="text-[10px] uppercase tracking-wider text-accent-cyan/70"
+                        className="text-[10px] uppercase tracking-wider text-fg-subtle"
                       >
                         #{d}
                       </span>

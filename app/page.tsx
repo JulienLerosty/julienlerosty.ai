@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <TopNav />
       <main className="min-h-screen p-4 md:p-8">
-        <header className="max-w-3xl mx-auto mb-12 mt-8">
+        <header className="max-w-3xl mx-auto mb-16 md:mb-24 mt-8 md:mt-12">
           <Image
             src="/avatar.png"
             alt="Julien Lerosty"
@@ -22,10 +22,10 @@ export default function Home() {
             priority
           />
           <div className="text-xs text-fg-muted mb-2 terminal-prompt">julien.lerosty // ai engineer</div>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+          <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-[-0.03em] leading-[1.05]">
             Wireless engineer building <span className="text-accent-green">production AI agents</span>.
           </h1>
-          <p className="text-fg-muted mt-3 max-w-xl">
+          <p className="text-fg-muted mt-4 max-w-xl">
             The portfolio is the proof. Ask the agent below — it knows my work.
           </p>
         </header>
